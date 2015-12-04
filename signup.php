@@ -59,6 +59,39 @@
 											<label for="name">Password</label>
 											<input type="text" name="passowrd" id="password" />
 										</div>
+										<div class="field">
+											<label for="name">Address Line1</label>
+											<input type="text" name="add1" id="add1" />
+										</div>
+										<div class="field">
+											<label for="name">Address Line2</label>
+											<input type="text" name="add2" id="add2" />
+										</div>
+										<div class="field">
+											<label for="name">city</label>
+											<input type="text" name="city" id="city" />
+										</div><div class="field">
+											<label for="name">state</label>
+											<input type="text" name="state" id="state" />
+										</div><div class="field">
+											<label for="name">zip</label>
+											<input type="text" name="zip" id="zip" />
+										</div><div class="field">
+											<label for="name">Name on card</label>
+											<input type="text" name="nameoncard" id="nameoncard" />
+										</div>
+										<div class="field">
+											<label for="name">Expiry Date</label>
+											<input type="text" name="expirydate" id="expirydate" />
+										</div>
+										<div class="field">
+											<label for="name">CVV</label>
+											<input type="text" name="cvv" id="cvv" />
+										</div>
+										<div class="field">
+											<label for="name">Card Number</label>
+											<input type="text" name="cardnumber" id="cardnumber" />
+										</div>
 										<ul class="actions">
 											<li><input type="submit" value="Sign Up" /></li>
 										</ul>
