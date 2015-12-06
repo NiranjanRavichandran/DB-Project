@@ -1,3 +1,8 @@
+<?php
+include 'functions.php';
+connectDatabase();
+?>
+
 <!DOCTYPE HTML>
 
 <html>
@@ -16,7 +21,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="index.php">Tekket</a></h1>
+						<h1><a href="index.php">Teket</a></h1>
 						<nav>
 							<a href="#menu">Menu</a>
 						</nav>

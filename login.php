@@ -1,3 +1,8 @@
+<?php
+include 'functions.php';
+connectDatabase();
+?>
+
 <!DOCTYPE HTML>
 
 <html>
@@ -42,18 +47,19 @@
 							<div class="login-outter-wrap">
 								<div class="inner login-wrapper">
 									<h2 class="major">Tekket Login</h2>
-									<form method="post" action="#">
+									<form method="post" action="scripts/loginScript.php">
 										<div class="field">
 											<label for="name">Username</label>
 											<input type="text" name="username" id="username" />
 										</div>
 										<div class="field">
 											<label for="name">Password</label>
-											<input type="text" name="passowrd" id="password" />
+											<input type="password" name="password" id="password" required="Password"/>
 										</div>
 										<ul class="actions">
-											<li><input type="submit" value="Login" /></li>
+											<li><input type="submit" value="Login" class="special fit"/></li>
 										</ul>
+										<a href="signup.php" class="button small">Sign Up</a>
 									</form>
 								</div>
 							</div>
