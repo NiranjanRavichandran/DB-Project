@@ -45,7 +45,7 @@ connectDatabase();
 
 						<!-- Content -->
 							<div class="login-outter-wrap">
-								<div class="inner login-wrapper">
+								<div class="inner signup-wrapper">
 									<h2 class="major">Signup to use Tekket</h2>
 									<form method="post" action="#">
 										<div class="field">

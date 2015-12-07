@@ -60,6 +60,8 @@ session_start();
 									echo "<li><a href='login.php'>Login</a></li>";
 								}
 								 ?>
+								 <li>
+									<a href="book.php">Book Now</a></li>
 							</ul>
 							<a href="#" class="close">Close</a>
 						</div>
