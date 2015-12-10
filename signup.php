@@ -7,7 +7,7 @@ connectDatabase();
 
 <html>
 	<head>
-		<title>Tekket - Login</title>
+		<title>Tekket - Signup</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -47,7 +47,7 @@ connectDatabase();
 							<div class="login-outter-wrap">
 								<div class="inner signup-wrapper">
 									<h2 class="major">Signup to use Tekket</h2>
-									<form method="post" action="#">
+									<form name="signupForm" method="post" action="scripts/signupScript.php">
 										<div class="field">
                       <div class="field">
   											<label for="name">First Name</label>
@@ -57,7 +57,7 @@ connectDatabase();
   											<label for="name">Last Name</label>
   											<input type="text" name="lastname" id="lastname" />
   										</div>
-											<label for="name">Username</label>
+											<label for="name">Email</label>
 											<input type="text" name="username" id="username" />
 										</div>
 										<div class="field">

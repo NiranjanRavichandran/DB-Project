@@ -1,6 +1,8 @@
 <?php
 include 'functions.php';
 connectDatabase();
+
+session_start();
 ?>
 
 <!DOCTYPE HTML>
@@ -47,6 +49,12 @@ connectDatabase();
 							<div class="login-outter-wrap">
 								<div class="inner login-wrapper">
 									<h2 class="major">Tekket Login</h2>
+									<?php
+										if (isset($_SESSION['LoginAlert'])){
+											echo "<h3>".$_SESSION['LoginAlert']."</h3>";
+										}
+
+									 ?>
 									<form method="post" action="scripts/loginScript.php">
 										<div class="field">
 											<label for="name">Username</label>

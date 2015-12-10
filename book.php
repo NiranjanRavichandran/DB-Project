@@ -16,6 +16,7 @@ session_start();
 
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/custom.css" />
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> -->
 	</head>
 	<body>
 
@@ -66,21 +67,22 @@ session_start();
 					</nav>
 
 					<section class="container">
-						<form name="booking">
+						<?php
+						if (isset($_SESSION['loginAlert'])){
+							echo "<div class='alert'>";
+							echo "<span class='icon fa-times-circle fa-2x'></span><h3>Please login to book tickets</h3></div>";
+						}
+
+						 ?>
+						<form name="booking" method="post" action="scripts/bookingScript.php">
 							<div class="column3">
 									<select name="city-list" id="city-list">
 										<option value="">--</option>
 										<?php
-										// $res = $connect->query("SELECT * from theatre");
-										// $res->data_seek(0);
-										// while ($row = $res->fetch_assoc()) {
-										//
-										// 		echo "<option value=".$row['ID']." >".$row['name']."</option>";
-										// }
 										$query = "CALL cityList()";
 										$stmt = $connect->query($query);
 										while ($row = $stmt->fetch_assoc()){
-											echo "<option value='1'>".$row['city']."</option>";
+											echo "<option value=".$row['city'].">".$row['city']."</option>";
 										}
 										 ?>
 									</select>
@@ -89,8 +91,8 @@ session_start();
 							 <div class="column3" id="movie-list" style="display: none;">
 							 </div>
 							 <div class="column3" id="theatre-list" style="display: none;">
-							 </div>
-							 <div class="column3" id="shows-list" style=";">
+							 </div><br>
+							 <div class="container" id="shows-list" style="display: none;">
 							 </div>
 						</form>
 					</section>
