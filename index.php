@@ -1,23 +1,16 @@
 <?php
+include 'functions.php';
+connectDatabase();
 
-//Create Connection
-$connect = mysqli_connect('localhost', 'pma', 'bazzinga', 'Movie_Ticketing');
-
-//Check Connection
-
-if(mysqli_connect_errno($connect)){
-  echo 'Failed to connect to database ' . mysqli_connect_error();
-}
-
-mysqli_query($connect, "INSERT INTO theatre VALUES (6, 'Cinepolis', 'Charlotte')");
-
+//Start session
+session_start();
 ?>
 
 <!DOCTYPE HTML>
 
 <html>
 	<head>
-		<title>Teket</title>
+		<title>Tekket</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -33,18 +26,42 @@ mysqli_query($connect, "INSERT INTO theatre VALUES (6, 'Cinepolis', 'Charlotte')
 					<header id="header" class="alt">
 						<h1><a href="index.php">Tekket</a></h1>
 						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+							<a href="#menu">
+								<?php
 
-				<!-- Menu -->
+								if (isset($_SESSION["user"])){
+									echo $_SESSION["user"];
+								}else{
+									echo "Menu";
+								}
+								 ?>
+							</a>
+						</nav>
+          </header>
+
+  				<!-- Menu -->
 					<nav id="menu">
 						<div class="inner">
-							<h2>Menu</h2>
+							<h2>
+								<?php
+								if (isset($_SESSION["user"])){
+									echo $_SESSION["user"];
+								}else{
+									echo "Menu";
+								}
+								 ?>
+							</h2>
 							<ul class="links">
 								<li><a href="index.php">Home</a></li>
-								<li><a href="login.php">Login</a></li>
-								<li><a href="signup.php">Sign Up</a></li>
+								<?php
+								if (isset($_SESSION["user"])){
+									echo "<li><a href='scripts/logoutScript.php'>Logout</a></li>";
+								}else{
+									echo "<li><a href='login.php'>Login</a></li>";
+								}
+								 ?>
+								 <li>
+									<a href="book.php">Book Now</a></li>
 							</ul>
 							<a href="#" class="close">Close</a>
 						</div>
@@ -55,7 +72,6 @@ mysqli_query($connect, "INSERT INTO theatre VALUES (6, 'Cinepolis', 'Charlotte')
 						<div class="inner">
 							<div class="logo"><span class="icon fa-ticket"></span></div>
 							<h2>Online Ticketing made easy</h2>
-							<p>Book your tickets now.</p>
 						</div>
 						<div id="slideshow">
 						   <div>
@@ -74,7 +90,7 @@ mysqli_query($connect, "INSERT INTO theatre VALUES (6, 'Cinepolis', 'Charlotte')
 					</section>
 
 				<!-- Wrapper -->
-					<section id="wrapper">
+				<section id="wrapper">
 
 						<!-- Sample Movie -->
 							<!-- <section id="one" class="wrapper spotlight style1">
